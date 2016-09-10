@@ -15,9 +15,9 @@ int Mean::CalcMean(int indata,int *utdata)
   int result=false;
   _mean_val+=indata;
 
-  if(_mean_ct==(1<<_mean_shift))
+  if(_mean_ct==(1u<<_mean_shift))
   {
-    _mean_val+=1<<(_mean_shift-1); //Round off
+    _mean_val+=1u<<(_mean_shift-1); //Round off
     *utdata=_mean_val>>_mean_shift;
     result=true;
     _mean_val=0;

@@ -14,9 +14,9 @@ class Mean
 		Mean(int mean_shift);
 		int CalcMean(int indata,int *utdata);
 	private:
-		unsigned int _mean_ct;
-		int _mean_shift;
-		long _mean_val;
+		unsigned int _mean_ct1,_mean_ct2;
+		int _mean_shift1,_mean_shift2;
+		long _mean_val1,_mean_val2;
 };
 
 

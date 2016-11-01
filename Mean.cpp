@@ -24,23 +24,23 @@ int Mean::CalcMean(int indata,int *utdata)
 	*/
 
 	_mean_ct1++;
-	_mean_val+=indata;
-	if(_mean_ct1==(1u<<_mean_shift)) //Mean 1 done.
+	_mean_val1+=indata;
+	if(_mean_ct1==(1u<<_mean_shift1)) //Mean 1 done.
 	{
-		_mean_val1+=1u<<(_mean_shift-1); //Round off
-		_mean_val1=_mean_val1>>_mean_shift;
-		_mean_val2=+_mean_val_1;
+		_mean_val1+=1u<<(_mean_shift1-1); //Round off
+		_mean_val1=_mean_val1>>_mean_shift1;
+		_mean_val2=+_mean_val1;
 		if(_mean_shift2==0)
 		{
 			result=true;
-			*utdata=_mean_val_1;
+			*utdata=_mean_val1;
 		}
 		_mean_ct2++;
 		_mean_val1=0;
 		_mean_ct1=0;
 	}
 
-	if(_mean_ct2==(1u<<_mean_shift2) && mean_shift2>0)
+	if(_mean_ct2==(1u<<_mean_shift2) && _mean_shift2>0)
 	{
 		_mean_val2+=1u<<(_mean_shift2-1); //Round off
 		*utdata=_mean_val2>>_mean_shift2;

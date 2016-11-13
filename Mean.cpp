@@ -50,7 +50,7 @@ Mean::Mean(int mean_shift)
 		if(_mean_shift2==0)
 		{
 			result=true;
-			*utdata=_mean_val1; Serial.println("Done 1");
+			*utdata=_mean_val1;
 		}
 		//Serial.print("Mean1=");Serial.println(_mean_val1);
 		//Serial.print("Mean sum 2=");Serial.println(_mean_val2);
@@ -67,7 +67,7 @@ Mean::Mean(int mean_shift)
 		*utdata=_mean_val2>>_mean_shift2;
 		result=true;
 		_mean_val2=0;
-		_mean_ct2=0;Serial.println("Done 2");
+		_mean_ct2=0;
 	}
 	
 	return result;
